@@ -1,0 +1,123 @@
+  <form class="form-signin">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="username" class="sr-only">Username</label>
+    <input type="text" id="username" class="form-control" placeholder="Username" required autofocus>
+    <label for="password" class="sr-only">Password</label>
+    <input type="password" id="password" class="form-control" placeholder="Password" required>
+    
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button id='signinBtn' class="btn btn-lg btn-primary btn-block" onclick="goLogin();return false;" type="submit">Sign in</button>
+  </form>
+
+</div> <!-- /container -->
+
+<div class="container">
+
+  <div class="starter-template" id="utilityWrapper">
+    <h1>Get Started</h1>
+    
+    
+    <ul>
+     <li>Download your wallet</li>
+     <li><a href='product.html'>Create a product</a></li>
+     <li>Some magic happens and your wallet gets filled up</li>
+     <li>upload the item codes from the wallet</li>
+     
+   </ul>
+   
+   
+   <!-- /postSiteLoad -->
+
+   
+   
+ </div>
+
+</div><!-- /.container -->
+
+
+<div class="container">
+  
+  
+  <div id="catMsg"></div>
+  <div id="result"></div>
+</div><!-- /.container -->
+
+
+
+<script>
+ 
+  function verifySite() {
+   
+   
+   
+
+   $("#postSiteLoad").show();
+   
+   $("#utilityWrapper").show();
+
+   
+   
+
+ }        
+
+
+/////////////////
+//login functions
+/////////////////
+
+
+
+/////////////////
+//\login functions
+/////////////////
+
+
+function goLogin() {
+
+
+ $("#loginWrapper").hide();
+ 
+ $("#utilityWrapper").show();
+ 
+ var token = "";      
+
+//********************
+
+$("#result").html("");
+$("#msg").html("");
+
+console.log('yo')
+return token;       
+}
+
+
+
+
+
+
+$( document ).ready(function() {
+
+  $('#signinBtn').on('click',function() {
+    $(this).prop("disabled",true);
+  });
+
+
+
+  $("#postSiteLoad").hide();
+  
+  $("#utilityWrapper").hide();
+  
+  
+  
+  
+  
+  
+});     
+
+
+
+</script>

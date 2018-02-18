@@ -1,0 +1,123 @@
+<%= form_with(model: upc, local: true, id: 'myForm') do |form| %>
+  <% if upc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(upc.errors.count, "error") %> prohibited this upc from being saved:</h2>
+
+      <ul>
+      <% upc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <h1 class="form-signin-heading">Upload Your Product</h1>
+    <br>
+    <label for="name" class="sr-only">UPC</label>
+    <input type="text" id="name" name="name" class="form-control" placeholder="UPC" required autofocus>
+    <br>
+      <div class="actions">
+        <button id='signinBtn' class="btn btn-lg btn-primary btn-block" onclick="uploadProduct();" type="submit">Upload</button>
+      </div>
+    <% end %>
+    
+
+</div> <!-- /container -->
+
+<div class="container">
+
+  <div class="starter-template" id="utilityWrapper">
+    <h1>Mining</h1>
+    
+    
+    <div id="loading"><img src='/xfchain/assets/loading.gif'></div>
+    <h2>Magic is happening...</h2> 
+    <h5>go check your wallet - we just pushed some product tokens </h5>
+    <p id='walletLink'><a href="#">Your wallet is ready</a></p>
+
+    
+    
+    <!-- /postSiteLoad -->
+
+    
+    
+  </div>
+
+</div><!-- /.container -->
+
+
+<div class="container">
+  
+  
+  <div id="catMsg"></div>
+  <div id="result"></div>
+</div><!-- /.container -->
+
+
+</body>
+<script>
+ 
+
+
+/////////////////
+//login functions
+/////////////////
+
+
+
+/////////////////
+//\login functions
+/////////////////
+
+
+function uploadProduct() {
+ $("#loginWrapper").hide();
+ $("#utilityWrapper").show();
+ $("#loading").show();
+ $("#walletLink").hide();
+ document.getElementById("myForm").submit();
+
+  setTimeout(function(){ 
+    $("#walletLink").show();
+    $("#loading").hide();
+  }, 3000);
+
+ var token = "";      
+
+//********************
+
+$("#result").html("");
+$("#msg").html("");
+
+console.log('yo')
+return token;       
+}
+
+
+
+
+
+
+$( document ).ready(function() {
+
+  $('#signinBtn').on('click',function() {
+    $(this).prop("disabled",true);
+  });
+
+
+
+  $("#postSiteLoad").hide();
+  
+  $("#utilityWrapper").hide();
+  
+  
+  
+  
+  
+  
+});     
+
+
+
+</script>

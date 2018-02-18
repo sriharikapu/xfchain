@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @upc.name %></h1>
+
+<%= link_to 'Upload Products', upc_upload_products_path(@upc) %> |
+
+<%= link_to 'Edit', edit_upc_path(@upc) %> |
+<%= link_to 'Back', upcs_path %>

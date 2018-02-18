@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>XFChain Beta</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" /> -->
+
+ <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+ <!-- Optional theme -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!--
+  <link rel="stylesheet" href="https://mapzen.com/js/0.6/mapzen.css" />
+  <link rel="stylesheet" href="lrm-mapzen.css" />
+-->
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a class="navbar-brand" href="#"><img src="assets/xfchain-logo-2-30.png"></a></li>
+          <li class="active"><a href="#">Supplier</a></li>
+          <li class="active"><a href="#">Buyer</a></li>
+          <li class="active"><a href="#">Wallet</a></li>
+          <li class="active"><a href="#">ICO</a></li>
+          <li class="active"><a href="#">Logout</a></li>
+          
+        </ul>
+        
+        
+        
+
+        
+      </div><!--/.nav-collapse -->
+      
+      
+      
+      
+      
+    </div>
+  </nav>
+
+  
+
+  <div class="container">
+   <div id="msg"></div>
+ </div><!-- /container -->
+
+ <div class="container" id="loginWrapper">
+
+  <form class="form-signin">
+    <h2 class="form-signin-heading">Upload Your Product</h2>
+    <label for="productname" class="sr-only">Product Name</label>
+    <input type="text" id="productname" class="form-control" placeholder="productname" required autofocus>
+    <label for="UPC" class="sr-only">UPC / SKU</label>
+    <input type="text" id="UPC" class="form-control" placeholder="017817725460" required>
+    
+    <label for="IPFS" class="sr-only">Image URL</label>
+    <input type="text" id="IPFS" class="form-control" placeholder="https://ipfs.io/ipfs/[something]" required>
+    
+    <button id='signinBtn' class="btn btn-lg btn-primary btn-block" onclick="uploadProduct();return false;" type="submit">Upload</button>
+  </form>
+
+</div> <!-- /container -->
+
+<div class="container">
+
+  <div class="starter-template" id="utilityWrapper">
+    <h1>Mining</h1>
+    
+    
+    <div id="loading"><img src='assets/loading.gif'></div>
+    <h2>Magic is happening...</h2> 
+    <h5>go check your wallet - we just pushed some product tokens </h5>
+    <p id='walletLink'><a href="#">Your wallet is ready</a></p>
+
+    
+    
+    <!-- /postSiteLoad -->
+
+    
+    
+  </div>
+
+</div><!-- /.container -->
+
+
+<div class="container">
+  
+  
+	<div id="catMsg"></div>
+	<div id="result"></div>
+</div><!-- /.container -->
+
+
+</body>
+<script>
+ 
+
+
+/////////////////
+//login functions
+/////////////////
+
+
+
+/////////////////
+//\login functions
+/////////////////
+
+
+function uploadProduct() {
+
+
+ $("#loginWrapper").hide();
+ 
+ $("#utilityWrapper").show();
+ $("#loading").show();
+ $("#walletLink").hide();
+ setTimeout(function(){ 
+
+  $("#walletLink").show();
+  $("#loading").hide();
+}, 3000);
+
+ var token = "";			
+
+//********************
+
+$("#result").html("");
+$("#msg").html("");
+
+console.log('yo')
+return token;       
+}
+
+
+
+
+
+
+$( document ).ready(function() {
+
+  $('#signinBtn').on('click',function() {
+    $(this).prop("disabled",true);
+  });
+
+
+
+  $("#postSiteLoad").hide();
+  
+  $("#utilityWrapper").hide();
+  
+  
+  
+  
+  
+  
+});     
+
+
+
+</script>
+</html>

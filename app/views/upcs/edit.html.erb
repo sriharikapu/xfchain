@@ -1,0 +1,159 @@
+<h2>Upload A CSV File w/ Product Tokens</h2> 
+
+<div class="pull-right"><a href='example.csv'>Download CSV Template</a></div><br>
+
+<form method="POST" action="#" enctype="multipart/form-data">
+  <!-- COMPONENT START -->
+  <div class="form-group">
+    <div class="input-group input-file" name="Fichier1">
+      <input type="text" class="form-control" placeholder='Choose a file...' />     
+      <span class="input-group-btn">
+        <button class="btn btn-default btn-choose" type="button">Choose</button>
+      </span>
+
+
+    </div>
+  </div>
+  <!-- COMPONENT END -->
+  <div class="form-group">
+    <button type="submit" id="submitbtn" class="btn btn-primary pull-right" disabled>Submit</button>
+    <button type="reset" class="btn btn-danger">Reset</button>
+  </div>
+</form>
+
+
+
+
+
+
+</div> <!-- /container -->
+
+<div class="container">
+
+  <div class="starter-template" id="utilityWrapper">
+    <h1>Mining</h1>
+    
+    
+    <div id="loading"><img src='assets/loading.gif'></div>
+    <h2>Processing your file</h2> 
+    <h5>These tokens will be saved to your wallet for product verification</h5>
+    <p id='walletLink'><a href="#">Your wallet is ready</a></p>
+
+    
+    
+    <!-- /postSiteLoad -->
+
+    
+    
+  </div>
+
+</div><!-- /.container -->
+
+
+<div class="container">
+  
+  
+  <div id="catMsg"></div>
+  <div id="result"></div>
+</div><!-- /.container -->
+
+
+
+
+/////////////////
+//login functions
+/////////////////
+
+
+
+/////////////////
+//\login functions
+/////////////////
+
+
+function uploadProduct() {
+
+
+ $("#loginWrapper").hide();
+ 
+ $("#utilityWrapper").show();
+ $("#loading").show();
+ $("#walletLink").hide();
+ setTimeout(function(){ 
+
+  $("#walletLink").show();
+  $("#loading").hide();
+}, 3000);
+
+ var token = "";     
+
+//********************
+
+$("#result").html("");
+$("#msg").html("");
+
+console.log('yo')
+return token;       
+}
+
+
+
+
+
+
+$( document ).ready(function() {
+
+  $('#signinBtn').on('click',function() {
+    $(this).prop("disabled",true);
+  });
+
+
+
+  $("#postSiteLoad").hide();
+  
+  $("#utilityWrapper").hide();
+  
+  
+  
+  
+  
+  
+});     
+
+function bs_input_file() {
+  $(".input-file").before(
+    function() {
+      if ( ! $(this).prev().hasClass('input-ghost') ) {
+        var element = $("<input type='file' class='input-ghost' style='visibility:hidden; height:0'>");
+        element.attr("name",$(this).attr("name"));
+        element.change(function(){
+          element.next(element).find('input').val((element.val()).split('\\').pop());
+        });
+        $(this).find("button.btn-choose").click(function(){
+          $("button[type=submit]").removeAttr("disabled");
+          element.click();
+        });
+        $(this).find("button.btn-reset").click(function(){
+          element.val(null);
+          $(this).parents(".input-file").find('input').val('');
+        });
+        $(this).find('input').css("cursor","pointer");
+        $(this).find('input').mousedown(function() {
+          $(this).parents('.input-file').prev().click();
+
+          return false;
+        });
+        return element;
+      }
+    }
+    );
+}
+$(function() {
+  bs_input_file();
+});
+
+</script>
+
+
+<%= link_to 'Show', @upc %> |
+<%= link_to 'Back', upcs_path %>

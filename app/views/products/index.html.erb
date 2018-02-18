@@ -1,0 +1,35 @@
+<style>
+.asdf {
+  margin-bottom: 15px;
+}
+</style>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Products for UPC: '<%= @upc.name %>'</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="11">id</th>
+      <th colspan="99" width='150px'>product id</th>
+      <th colspan="99" width='500px'>product public key</th>
+      <th colspan="99" width='500px'>buyer wallet key</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr class="asdf">
+        <td colspan="11"><%= product.id %></td>
+        <td colspan="99" width='150px'><%= product.public_id %></td>
+        <td colspan="99" width='500px'><%= product.public_key %></td>
+        <td colspan="99" width='500px'><%= product.wallet_key %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Upload Products', upc_upload_products_path(@upc) %>

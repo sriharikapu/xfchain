@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>XfChain</title>
+<head>
+  
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <title>XFChain Beta</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" /> -->
+
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+   <!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!--
+  <link rel="stylesheet" href="https://mapzen.com/js/0.6/mapzen.css" />
+  <link rel="stylesheet" href="lrm-mapzen.css" />
+-->
+ <link rel="stylesheet" href="/xfchain/assets/style.css" />
+</head>
+<body>
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" href="/"><img src="/xfchain/assets/xfchain-logo-2-30.png"></a></li>
+            <li class="active"><a href="/upcs">UPCs</a></li>
+            <li class="active"><a href="#">Orders</a></li>
+            <li class="active"><a href="#">ICO</a></li>
+            <li class="active"><a href="#">Logout</a></li>
+            
+          </ul>
+          
+          
+          
+
+          
+        </div><!--/.nav-collapse -->
+        
+        
+        
+         
+   
+      </div>
+    </nav>
+
+    
+
+<div class="container">
+  <div id="msg"></div>
+</div><!-- /container -->
+
+ <div class="container" id="loginWrapper">
 
   <body>
     <%= yield %>

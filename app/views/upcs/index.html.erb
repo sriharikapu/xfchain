@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Upcs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @upcs.each do |upc| %>
+      <tr>
+        <td><%= link_to upc.name, upc %></td>
+        <td><%= link_to 'Edit', edit_upc_path(upc) %></td>
+        <td><%= link_to 'Destroy', upc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Upc', new_upc_path %>
