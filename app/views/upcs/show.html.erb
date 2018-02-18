@@ -2,7 +2,11 @@
 
 <h1><%= @upc.name %></h1>
 
-<%= link_to 'Upload Products', upc_upload_products_path(@upc) %> |
+<% if @upc.products.count === 0 %>
+  <%= link_to 'Upload Products', upc_upload_products_path(@upc) %> |
+<% else %>
+  <%= link_to 'View Products', upc_products_path(@upc) %> |
+<% end %>
 
 <%= link_to 'Edit', edit_upc_path(@upc) %> |
 <%= link_to 'Back', upcs_path %>

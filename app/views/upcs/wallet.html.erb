@@ -1,0 +1,65 @@
+<head>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <title>XFChain Beta</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" /> -->
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!--
+  <link rel="stylesheet" href="https://mapzen.com/js/0.6/mapzen.css" />
+  <link rel="stylesheet" href="lrm-mapzen.css" />
+-->
+<link rel="stylesheet" href="/xfchain/assets/style.css" />
+</head>
+
+<form class="form-signin" id="myForm">
+  <h2 class="form-signin-heading">Check Your Product</h2>
+  <label for="productname" class="sr-only">Your Wallet</label>
+  <input type="text" id="productname" class="form-control" placeholder="Wallet Address" required autofocus>
+  <label for="UPC" class="sr-only">UPC</label>
+  <input type="text" id="UPC" class="form-control" placeholder="017817725460" required>
+
+  <label for="UPC" class="sr-only">SKU</label>
+  <input type="text" id="SKU" class="form-control" placeholder="017817725460" required>
+
+  <br>
+
+  <button id='signinBtn' class="btn btn-lg btn-primary btn-block" onclick="uploadProduct();return false;" type="submit">Upload</button>
+</form>
+
+
+<script>
+  function uploadProduct() {
+    $("#loginWrapper").hide();
+    $("#utilityWrapper").show();
+    $("#loading").show();
+    $("#walletLink").hide();
+    document.getElementById("myForm").submit();
+
+    setTimeout(function(){ 
+      $("#walletLink").show();
+      $("#loading").hide();
+    }, 3000);
+
+    var token = "";      
+
+    //********************
+
+    $("#result").html("");
+    $("#msg").html("");
+
+    console.log('yo')
+    return token;       
+  }
+</script>

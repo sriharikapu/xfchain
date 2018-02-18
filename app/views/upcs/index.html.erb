@@ -13,8 +13,6 @@
     <% @upcs.each do |upc| %>
       <tr>
         <td><%= link_to upc.name, upc %></td>
-        <td><%= link_to 'Edit', edit_upc_path(upc) %></td>
-        <td><%= link_to 'Destroy', upc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

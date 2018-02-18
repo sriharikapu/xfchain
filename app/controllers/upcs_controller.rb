@@ -4,6 +4,26 @@ class UpcsController < ApplicationController
   # GET /upcs
   # GET /upcs.json
 
+  def wallet
+    render layout: false
+  end
+
+  def register
+    upc_id = params[:upcId]
+    product_id = params[:productId]
+    wallet_address = params[:walletAddress]
+    @upc = Upc.where(name: upc_id.downcase).first
+    @product = @upc.products.where(public_id: product_id).first
+
+    if @product && @product.wallet_key.blank?
+      @product.update_attributes(wallet_key: wallet_address)
+    end
+
+    respond_to do |format|
+      format.json { render :register, status: :created, location: @product }
+    end
+  end
+
   def home
   end
 
